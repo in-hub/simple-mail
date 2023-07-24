@@ -1,11 +1,7 @@
 set(simplemailqt_SRC
     emailaddress.cpp
     emailaddress_p.h
-    mimeattachment.cpp
     mimecontentformatter.cpp
-    mimefile.cpp
-    mimehtml.cpp
-    mimeinlinefile.cpp
     mimemessage.cpp
     mimemessage_p.h
     mimemultipart.cpp
@@ -23,11 +19,7 @@ set(simplemailqt_SRC
 
 set(simplemailqt_HEADERS
     emailaddress.h
-    mimeattachment.h
     mimecontentformatter.h
-    mimefile.h
-    mimehtml.h
-    mimeinlinefile.h
     mimemessage.h
     mimemultipart.h
     mimepart.h
