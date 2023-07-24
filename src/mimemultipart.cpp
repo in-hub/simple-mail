@@ -71,6 +71,7 @@ bool MimeMultiPart::writeData(QIODevice *device)
         }
     }
     device->write("--" + d->contentBoundary + "--\r\n");
+    device->write("\r\n.\r\n");
 
     return true;
 }

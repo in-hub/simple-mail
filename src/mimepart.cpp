@@ -307,7 +307,7 @@ bool MimePart::writeData(QIODevice *device)
         break;
     }
 
-    if (device->write("\r\n", 2) != 2) {
+    if (device->write("\r\n.\r\n", 5) != 5) {
         return false;
     }
 
