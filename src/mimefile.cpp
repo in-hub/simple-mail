@@ -20,6 +20,9 @@
 #include "mimepart_p.h"
 
 #include <QtCore/QBuffer>
+#if QT_CONFIG(mimetype)
+#include <QtCore/QMimeDatabase>
+#endif
 #include <QtCore/QFileInfo>
 #include <QtCore/QMimeDatabase>
 
@@ -37,9 +40,11 @@ MimeFile::MimeFile(const std::shared_ptr<QFile> &file)
     const QString filename = QFileInfo(*file).fileName();
     d->contentName         = filename.toLatin1();
 
+#if QT_CONFIG(mimetype)
     QMimeDatabase db;
     QMimeType mime = db.mimeTypeForFile(file->fileName());
     d->contentType = mime.name().toLatin1();
+#endif
     if (d->contentType.isEmpty()) {
         d->contentType = QByteArrayLiteral("application/octet-stream");
     }
